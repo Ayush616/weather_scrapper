@@ -19,12 +19,11 @@ if(array_key_exists('city',$_POST)){
     
     $page = file_get_contents("https://www.timeanddate.com/weather/india/$city/");
     
-    $str = 'title="Historic weather and climate information">Climate (Averages)</a></div></nav><section class=fixed><div class="row pdflexi-b dashb"><div class="eight columns"><h2>';
+    $str = '<section class=fixed><div class="row pdflexi-b dashb"><div><h2>';
      
         
    $pagearray = explode("$str",$page); //explode function breaks into arrays. 
-    
-    
+// echo "https://www.timeanddate.com/weather/india/$city/";     
     if(sizeof($pagearray) > 1){
             
               $secondpagearray = explode("See more hour-by-hour weather", $pagearray[1]);
@@ -38,6 +37,8 @@ if(array_key_exists('city',$_POST)){
                 $error = "This city could not be found";
             }
         }else{
+
+          echo 1;
         
         $error = "This city could not be found";
     }
@@ -76,7 +77,7 @@ if(array_key_exists('city',$_POST)){
             
             text-align: center;
             margin-top: 180px;
-            width: 430px;
+            width: 528px;
         }
         
         input{
