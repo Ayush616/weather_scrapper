@@ -102,7 +102,7 @@ if(array_key_exists('city',$_POST)){
     
     <div class="container">
         <h1>What's the Weather?</h1>
-        <form method="post">
+        <form method="post" id="weatherform">
           <div class="form-group">
             <label for="city">Enter the name of a city</label>
             <input type="text" name="city" class="form-control" id="city" aria-describedby="emailHelp" placeholder="Eg. Bilaspur, New Delhi">
@@ -112,11 +112,11 @@ if(array_key_exists('city',$_POST)){
            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         
-        <div><?php if($weather){ echo $weather; }?></div>
-        <div id="error"><?php if($error){ echo '<div class="alert alert-danger" role="alert">'.$error.'</div>'; }?></div>                                        
+                                             
         
     </div>
-    
+    <div><?php if($weather){ echo $weather; }?></div>
+        <div id="error"><?php if($error){ echo '<div class="alert alert-danger" role="alert">'.$error.'</div>'; }?></div>   
 
     
  
@@ -126,5 +126,11 @@ if(array_key_exists('city',$_POST)){
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script>
+      // $('#weatherform').on('submit', function(){
+        $('#wt-5hr').addClass('table table-bordered');
+      // })
+      
+    </script>
   </body>
 </html>
